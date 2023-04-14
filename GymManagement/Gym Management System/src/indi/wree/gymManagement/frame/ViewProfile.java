@@ -29,12 +29,13 @@ public class ViewProfile extends JDialog {
     private ManageHelper helper;
 
     public ViewProfile(Frame owner, String title, boolean modal, User user) {
+        // set JDialog and its function
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
         this.setSize(600,600);
         this.setLayout(null);
-
+// show this member's personal information
         Members newMember= helper.getMemberInfo(user);
 
         name_label=new JLabel("Name");
@@ -76,7 +77,7 @@ public class ViewProfile extends JDialog {
         club_choice=new JTextField(newMember.getHomeClub());
         club_choice.setBounds(300,370,200,50);
         this.add(club_choice);
-
+//update his own information
         update=new JButton("Update");
         update.setBounds(250,450,100,50);
         update.addActionListener(new ActionListener() {

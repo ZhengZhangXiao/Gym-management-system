@@ -29,6 +29,9 @@ public class AddMember extends JDialog {
     private JDialog jd;
     private ManageHelper helper;
     public AddMember(Frame owner, String title, boolean modal) {
+
+// set JDialog and its function
+
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
@@ -85,6 +88,7 @@ public class AddMember extends JDialog {
 
         register=new JButton("Register");
         register.setBounds(150,400,100,50);
+
         register.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,6 +100,7 @@ public class AddMember extends JDialog {
                 String club1=club_choice.getSelectedItem().toString().trim();
                 String type1=type_choice.getSelectedItem().toString();
 
+// check if user input necessary information
                 if(name1==""){
                     JOptionPane.showMessageDialog(jd,"Please input name","",JOptionPane.WARNING_MESSAGE);
                     return;
@@ -120,6 +125,9 @@ public class AddMember extends JDialog {
                     JOptionPane.showMessageDialog(jd,"Please choose user type","",JOptionPane.WARNING_MESSAGE);
                     return;
                 }
+
+
+                // add a new class into the database
                 members.setName(name1);
                 members.setPassword(password1);
                 members.setEmail(email1);
@@ -146,6 +154,7 @@ public class AddMember extends JDialog {
 
         this.add(register);
 
+//cancel function
         cancel=new JButton("Cancel");
         cancel.setBounds(350,400,100,50);
         cancel.addActionListener(new ActionListener() {

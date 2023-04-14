@@ -1,6 +1,7 @@
 package src.indi.wree.gymManagement.bean;
 
 public class Members {
+
 // properties for gym members;
     private String name;
     private String password;

@@ -22,6 +22,8 @@ public class DeleteMember extends JDialog {
   private ManageHelper helper;
 
   public DeleteMember(Frame owner, String title, boolean modal) {
+
+//  set JDialog and its function
     super(owner, title, modal);
     helper=new ManageHelper();
     this.jd=this;
@@ -61,6 +63,7 @@ public class DeleteMember extends JDialog {
         String email1=email_text.getText();
         String club1=club_choice.getSelectedItem().toString().trim();
 
+// check if user input necessary information
         if(name1==""){
           JOptionPane.showMessageDialog(jd,"Please input name","",JOptionPane.WARNING_MESSAGE);
           return;
@@ -73,7 +76,7 @@ public class DeleteMember extends JDialog {
           JOptionPane.showMessageDialog(jd,"Please choose club","",JOptionPane.WARNING_MESSAGE);
           return;
         }
-
+// delete member form database
         Members members=new Members();
         members.setName(name1);
         members.setEmail(email1);

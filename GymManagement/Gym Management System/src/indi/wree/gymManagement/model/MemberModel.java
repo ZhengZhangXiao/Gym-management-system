@@ -1,6 +1,5 @@
 package src.indi.wree.gymManagement.model;
 
-import src.indi.wree.gymManagement.bean.GymClass;
 import src.indi.wree.gymManagement.bean.Members;
 import src.indi.wree.gymManagement.dao.ManageHelper;
 
@@ -16,6 +15,7 @@ public class MemberModel extends AbstractTableModel {
     private Vector<Vector<String>> rowData = null;
 
     public MemberModel(String sql, JDialog jd,String type) {
+        // input all members' information to the table
         helper=new ManageHelper();
         members=helper.getMembers(sql);
         columnNames=new Vector<String>();

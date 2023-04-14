@@ -26,6 +26,7 @@ public class UpdateMember extends JDialog {
     private ManageHelper helper;
 
     public UpdateMember(Frame owner, String title, boolean modal) {
+        // set JDialog and its function
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
@@ -66,7 +67,7 @@ public class UpdateMember extends JDialog {
         update_password.setBounds(300,300,200,50);
         jd.add(update_password);
         update_password.setVisible(false);
-
+// user need to choose which filed thet want to update
         choose=new JButton("Choose");
         choose.setBounds(150,400,100,50);
         choose.addActionListener(new ActionListener() {
@@ -131,7 +132,7 @@ public class UpdateMember extends JDialog {
                     JOptionPane.showMessageDialog(jd,"Please input new information","",JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-
+// update the information
                 if(helper.Update(members,column,newInfo)){
                     JOptionPane.showMessageDialog(jd,"Update Success");
                     jd.dispose();

@@ -24,6 +24,9 @@ public class AddClass extends JDialog {
     private ManageHelper helper;
 
     public AddClass(Frame owner, String title, boolean modal) {
+
+// set JDialog and its function
+
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
@@ -54,6 +57,7 @@ public class AddClass extends JDialog {
         teacher_text.setBounds(300,300,200,50);
         this.add(teacher_text);
 
+
         add_class=new JButton("Add");
         add_class.setBounds(150,400,100,50);
         add_class.addActionListener(new ActionListener() {
@@ -64,6 +68,7 @@ public class AddClass extends JDialog {
                 String time1=time_text.getSelectedItem().toString();
                 String teacher1=teacher_text.getText();
 
+// check if user input necessary information
                 if(name1==""){
                     JOptionPane.showMessageDialog(jd,"Please input class name","",JOptionPane.WARNING_MESSAGE);
                     return;
@@ -77,6 +82,7 @@ public class AddClass extends JDialog {
                     return;
                 }
 
+// add a new class into the database
                 GymClass gymClass=new GymClass();
                 gymClass.setClassName(name1);
                 gymClass.setTime(time1);
@@ -96,6 +102,7 @@ public class AddClass extends JDialog {
         });
         this.add(add_class);
 
+// cancel function
         cancel=new JButton("Cancel");
         cancel.setBounds(350,400,100,50);
         cancel.addActionListener(new ActionListener() {

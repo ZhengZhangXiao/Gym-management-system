@@ -13,12 +13,15 @@ public class ViewClass extends JDialog {
     private JDialog jd;
     private ClassModel classModel;
     public ViewClass(Frame owner, String title, boolean modal) {
+// set JDialog and its function
         super(owner, title, modal);
         this.jd = this;
         Container c = this.getContentPane();
         jp = new JPanel();
         jt = new JTable();
         String sql = " select * from class_info";
+
+// show all classes' information
         classModel = new ClassModel(sql,jd);
         jt.setModel(classModel);
 

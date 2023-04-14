@@ -14,6 +14,7 @@ public class ClassModel extends AbstractTableModel {
     private Vector<Vector<String>> rowData = null;
 
     public ClassModel(String sql, JDialog jd) {
+ // input all classes' information to the table
      helper=new ManageHelper();
      gymClasses=helper.getClass(sql);
      columnNames=new Vector<String>();
@@ -31,8 +32,7 @@ public class ClassModel extends AbstractTableModel {
          hang.add(gc.getTeacher());
          rowData.add(hang);
      }
-        System.out.println(columnNames.get(2));
-        System.out.println(rowData.get(1).get(1));
+
         if(getRowCount()!=0){
             JOptionPane.showMessageDialog(jd, "We have "+getRowCount()+" gym classes");
             return ;

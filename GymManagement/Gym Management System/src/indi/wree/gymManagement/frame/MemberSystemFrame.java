@@ -4,7 +4,6 @@ import src.indi.wree.gymManagement.bean.User;
 import src.indi.wree.gymManagement.utli.WindowUTI;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +20,7 @@ public class MemberSystemFrame extends JFrame {
     private User user;
 
     public MemberSystemFrame(User user)  {
+//  set JFrame and its function
         super();
         this.jf=this;
         this.setLayout(null);
@@ -32,7 +32,7 @@ public class MemberSystemFrame extends JFrame {
 
         profile=new JMenu("ViewProfile");
         menubar.add(profile);
-
+// member could use it view his profile and change his information
         view_profile=new JMenuItem("View ViewProfile");
         view_profile.addActionListener(new ActionListener() {
             @Override
@@ -47,7 +47,7 @@ public class MemberSystemFrame extends JFrame {
 
         browse_class=new JMenu("Gym Class");
         menubar.add(browse_class);
-
+// member could use it view gym class
         view_class=new JMenuItem("Browse class");
         view_class.addActionListener(new ActionListener() {
             @Override

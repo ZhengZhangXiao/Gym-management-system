@@ -22,12 +22,14 @@ public class LoginPage extends JFrame {
     private JFrame jf;
 
     public LoginPage(){
+
+        // set JFrame and its function
         super("ABC Fitness");
         this.jf=this;
         this.setLayout(null);
         this.setSize(600,600);
         Container c=this.getContentPane();
-      //  c.setBackground(Color.white);
+
 
         username_Label=new JLabel("User Name");
         username_Label.setBounds(100,100,100,50);
@@ -62,6 +64,7 @@ public class LoginPage extends JFrame {
               String userName=username_Text.getText();
               String password=new String(password_Text.getPassword());
               String user=userType.getSelectedItem().toString();
+// check if user input necessary information
 
               if(userName==""){
                   JOptionPane.showMessageDialog(jf,"Please input your user name","",JOptionPane.WARNING_MESSAGE);
@@ -82,7 +85,7 @@ public class LoginPage extends JFrame {
                   user1.setUserType(0);
               }
 
-
+// Login function
               ManageHelper helper=new ManageHelper();
 
               if(helper.login(user1)){
@@ -111,19 +114,11 @@ public class LoginPage extends JFrame {
 
         this.setResizable(false);
         WindowUTI.setFrameCenter(this);
-//        try{
-//
-//            Image img = ImageIO.read(this.getClass().getResource("./Login.png"));
-//            this.setIconImage(img);
-//        } catch (IOException e1){
-//            e1.printStackTrace();
-//        }
-
         this.setVisible(true);
 
 
     }
-
+//reset the input box
     public void Reset(){
         username_Text.setText("");
         password_Text.setText("");

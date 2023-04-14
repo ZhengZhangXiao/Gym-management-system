@@ -1,6 +1,5 @@
 package src.indi.wree.gymManagement.frame;
 
-import src.indi.wree.gymManagement.model.ClassModel;
 import src.indi.wree.gymManagement.model.MemberModel;
 import src.indi.wree.gymManagement.utli.WindowUTI;
 
@@ -16,6 +15,7 @@ public class ViewMember extends JDialog {
 
 
     public ViewMember(Frame owner, String title, boolean modal,String type) {
+// set JDialog and its function
         super(owner, title, modal);
         this.jd = this;
         Container c = this.getContentPane();
@@ -27,7 +27,7 @@ public class ViewMember extends JDialog {
         }else {
             sql = " select * from user_info where usertype=0 ";
         }
-
+// show all the members or staffs' information
          memberModel= new MemberModel(sql,jd,type);
         jt.setModel(memberModel);
 

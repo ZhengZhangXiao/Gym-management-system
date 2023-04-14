@@ -1,11 +1,14 @@
 package src.indi.wree.gymManagement.bean;
 
 public class GymClass {
+
+// All the properties of gym class
     private int classNo;
     private String className;
     private String time;
     private String teacher;
 
+// getter and setter of all the variables
     public int getClassNo() {
         return classNo;
     }

@@ -24,6 +24,7 @@ public class UpdateClass extends JDialog {
     private ManageHelper helper;
 
     public UpdateClass(Frame owner, String title, boolean modal) {
+        // set JDialog and its function
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
@@ -60,7 +61,7 @@ public class UpdateClass extends JDialog {
         update_choice.setBounds(300,300,200,50);
         jd.add(update_choice);
         update_choice.setVisible(false);
-
+// user need to select which field they want to change
         choose=new JButton("Choose");
         choose.setBounds(150,400,100,50);
         choose.addActionListener(new ActionListener() {
@@ -119,7 +120,7 @@ public class UpdateClass extends JDialog {
                     JOptionPane.showMessageDialog(jd,"Please input new information","",JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-
+// update information
                 if(helper.updateClass(gymClass,column,newInfo)){
                     JOptionPane.showMessageDialog(jd,"Update Success");
                     jd.dispose();

@@ -1,18 +1,11 @@
 package src.indi.wree.gymManagement.frame;
 
-import src.indi.wree.gymManagement.bean.GymClass;
 import src.indi.wree.gymManagement.bean.User;
-import src.indi.wree.gymManagement.dao.ManageHelper;
-import src.indi.wree.gymManagement.model.ClassModel;
 import src.indi.wree.gymManagement.utli.WindowUTI;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 public class StaffSystemFrame extends JFrame {
   private JMenuBar menubar;
@@ -37,6 +30,8 @@ public class StaffSystemFrame extends JFrame {
 
 
   public StaffSystemFrame(User user) {
+
+    // set JFrame and its function
     super();
 
     this.jf=this;
@@ -51,6 +46,7 @@ public class StaffSystemFrame extends JFrame {
     member_management=new JMenu("Member Management");
     menubar.add(member_management);
 
+// staff could use it add  a new gym member
     add_member=new JMenuItem("Add Gym Member");
     add_member.addActionListener(new ActionListener() {
       @Override
@@ -60,6 +56,7 @@ public class StaffSystemFrame extends JFrame {
     });
     member_management.add(add_member);
 
+// staff could use it delete a gym member
     delete_member=new JMenuItem("Delete Gym Member");
     delete_member.addActionListener(new ActionListener() {
       @Override
@@ -69,7 +66,7 @@ public class StaffSystemFrame extends JFrame {
     });
 
     member_management.add(delete_member);
-
+// staff could use it update gym member's infomation
     update_member=new JMenuItem("Update Member Information");
     update_member.addActionListener(new ActionListener() {
       @Override
@@ -79,7 +76,7 @@ public class StaffSystemFrame extends JFrame {
     });
 
     member_management.add(update_member);
-
+// staff could use it to view all gym member's information
     view_member=new JMenuItem("All Gym Member");
     view_member.addActionListener(new ActionListener() {
       @Override
@@ -88,6 +85,7 @@ public class StaffSystemFrame extends JFrame {
       }
     });
     member_management.add(view_member);
+// staff could use it to view all gym staff's information
     view_staff=new JMenuItem("All Gym Staff");
     view_staff.addActionListener(new ActionListener() {
       @Override
@@ -103,7 +101,7 @@ public class StaffSystemFrame extends JFrame {
     classes_management=new JMenu("Gym Class Management");
     menubar.add(classes_management);
 
-
+// staff could use it add a new gym class
     add_classes=new JMenuItem("Add Gym Class");
     add_classes.addActionListener(new ActionListener() {
       @Override
@@ -114,7 +112,7 @@ public class StaffSystemFrame extends JFrame {
 
     classes_management.add(add_classes);
 
-
+// staff could use it delete a gym class
     delete_classes=new JMenuItem("Delete Gym Class");
     delete_classes.addActionListener(new ActionListener() {
       @Override
@@ -124,7 +122,7 @@ public class StaffSystemFrame extends JFrame {
     });
 
     classes_management.add(delete_classes);
-
+// staff could use it update gym class's information
     update_classes=new JMenuItem("Update Class Information");
     update_classes.addActionListener(new ActionListener() {
       @Override
@@ -134,7 +132,7 @@ public class StaffSystemFrame extends JFrame {
     });
 
     classes_management.add(update_classes);
-
+//staff could use it to view all gym class's information
     view_classes=new JMenuItem("All Gym Classes");
     view_classes.addActionListener(new ActionListener() {
       @Override

@@ -21,6 +21,8 @@ public class DeleteClass extends JDialog {
     private ManageHelper helper;
 
     public DeleteClass(Frame owner, String title, boolean modal) {
+
+// set JDialog and its function
         super(owner, title, modal);
         helper=new ManageHelper();
         this.jd=this;
@@ -61,6 +63,7 @@ public class DeleteClass extends JDialog {
                 String time1=time_text.getSelectedItem().toString();
                 String no1=no_text.getText();
 
+//check if user input necessary information
                 if(name1==""){
                     JOptionPane.showMessageDialog(jd,"Please input class name","",JOptionPane.WARNING_MESSAGE);
                     return;
@@ -76,6 +79,7 @@ public class DeleteClass extends JDialog {
                     return;
                 }
 
+// delete the gym class from database
                 GymClass gymClass=new GymClass();
 
                 gymClass.setClassNo(Integer.parseInt(no1));
