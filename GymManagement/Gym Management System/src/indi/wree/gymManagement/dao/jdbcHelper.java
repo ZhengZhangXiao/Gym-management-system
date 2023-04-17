@@ -17,7 +17,7 @@ public class jdbcHelper {
     private void init(){
      try{
          Class.forName("com.mysql.cj.jdbc.Driver");
-         ct= DriverManager.getConnection("jdbc:mysql://localhost:3306/ABCFitnessDao","root","zhenyang7838675");
+         ct= DriverManager.getConnection("jdbc:mysql://localhost:3306/ABCFitnessDao","","");
 
      }catch( ClassNotFoundException e){
         e.printStackTrace();
